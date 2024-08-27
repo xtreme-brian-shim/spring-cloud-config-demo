@@ -6,6 +6,10 @@ spring:
       server:
         native:
           search-locations: file://${user.home}/workspace/spring-cloud-config-demo/local-development/config
+#        git:
+#          uri: "<some-uri>"
+#          search-paths: config
+#          default-label: main
   profiles:
     active: native
 

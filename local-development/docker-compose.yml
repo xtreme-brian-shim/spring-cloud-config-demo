@@ -7,9 +7,14 @@ services:
     volumes:
       - ./config:/config
     environment:
-      SPRING_PROFILES_ACTIVE: native
-      SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS: "file:///config"
+      # For file system
+      #SPRING_PROFILES_ACTIVE: native
+      #SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS: "file:///config"
 
+      # For remote
+      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: "https://github.com/xtreme-brian-shim/config"
+      SPRING_CLOUD_CONFIG_SERVER_GIT_SEARCH_PATHS: config
+      SPRING_CLOUD_CONFIG_SERVER_GIT_DEFAULT_LABEL: main
   shopping-postgres:
     container_name: shopping-postgres-db
     image: postgres

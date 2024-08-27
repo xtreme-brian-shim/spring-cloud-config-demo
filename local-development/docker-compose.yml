@@ -9,3 +9,22 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: native
       SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS: "file:///config"
+
+  shopping-postgres:
+    container_name: shopping-postgres-db
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: rootpassword
+      POSTGRES_DB: acme-shopping
+    ports:
+      - "5432:5432"
+
+  shopping-mysql:
+    container_name: shopping-mysql-db
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"

@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: acme-shopping
+  config:
+    import:
+      - configserver:http://localhost:8888

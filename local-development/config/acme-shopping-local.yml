@@ -1,0 +1,9 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,refresh
+
+app:
+  welcome: Welcome to Acme Shopping!
+  description: We provide propane and propane accessories
